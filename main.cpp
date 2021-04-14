@@ -1,3 +1,9 @@
+/* Quiz 2 Arrays & Sorting
+Create a program that accepts user input, stores the input into an array, sorts the array and display results back to the user.
+Teacher: Dr. Tyson McMillian
+Student: Ronald Angora
+Date: 04/10/2021 */
+
 #include <iostream>
 #include "Input_Validation_Extended.h"
 #include <algorithm>
@@ -16,9 +22,11 @@ int main()
 
   do
   {
+    const int max = 100;
     int size = 0;
-    int temp = 0;
-    int array[size];
+    double temp = 0.0;
+    double inputGrade = 0.0;
+    double array[max];
     welcomeMessage(); //Function call
     
     cout << "\nHow many grades are you entering? \n";
@@ -26,9 +34,11 @@ int main()
     for(int i=0; i<size; i++)
     {
       cout << "Grade Entry: " << endl;
-      cin >> array[size];
+      inputGrade  = validateDouble(inputGrade);
+      array[i] = inputGrade;
     }
     
+    //Sort the results DESC
     /*for(int b=0; b < size; b++)
 	  {
 		  for(int inner_loop = b+1; inner_loop < size; inner_loop++)
@@ -43,7 +53,7 @@ int main()
 		  }	
 	  }*/
   	
-    //display the results
+    //Display the results
 	  cout << "\nCurrent values in the numbers array with " << size << " elements DESC: " << endl; 
 	  for(int a = 0; a < size; a++)
 	  {
